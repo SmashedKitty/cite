@@ -1,0 +1,79 @@
+header {
+    width: 100%;
+    height: 7.5vh;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    background: rgb(73, 100, 181);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    font-size: 24px;
+}
+
+.ImgBlock {
+    width: 25%;
+    background-color: burlywood;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ImgBlock img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.TextBlock {
+    flex: 1;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    overflow-y: auto;
+    font-family: 'Nunito', sans-serif;
+}
+
+.TextBlock p {
+    margin: 10px 0;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+#PeachP {
+    font-weight: bold;
+    color: rgb(73, 100, 181);
+    font-size: 18px;
+}
+
+#template {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;  /* Центрируем по вертикали, но блоки на одной строке */
+}
+
+/* Телефон */
+@media (max-width: 768px) {
+    #template {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .ImgBlock {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
