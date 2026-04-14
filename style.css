@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Nunito-ExtraBold.ttf') format('truetype');
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 header {
     width: 100%;
     height: 7.5vh;
@@ -13,67 +25,229 @@ header {
     gap: 20px;
     color: white;
     font-size: 24px;
+    z-index: 100;
+}
+
+body {
+    overflow: hidden;
+    background: #ffffff00;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    height: calc(100vh - 7.5vh);
+    overflow: hidden;
+}
+
+
+.left-side {
+    flex: 8; 
+    background: #f0f0f000;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#MyBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: row;      
+    flex-wrap: wrap;          
+    justify-content: center;  
+    align-items: flex-start;  
+    gap: 20px;
+    overflow-y: auto;         
+    overflow-x: hidden;
+    padding: 10px;
+    height: 100%;
+}
+
+.right-side {
+    flex: 2;  
+    background: #e0e0e000;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#Peaches {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;     
+    gap: 20px;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 5px;
+}
+
+.post {
+    width: 90%;
+    max-width: 250px;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.postMY {
+    width: 200px;              
+    background: rgba(255, 255, 255, 0);
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.postMY:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .ImgBlock {
-    width: 25%;
-    background-color: burlywood;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
     border-radius: 10px;
     overflow: hidden;
 }
 
-.ImgBlock img {
+.MyImgBlock {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ImgBlock img,
+.MyImgBlock img {
     width: 100%;
     height: auto;
     display: block;
     cursor: pointer;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.MyImgBlock img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.ImgBlock img:hover,
+.MyImgBlock img:hover {
+    transform: scale(1.05);
 }
 
 .TextBlock {
-    flex: 1;
-    padding: 20px;
+    padding: 15px;
     background: #f9f9f9;
     border-radius: 10px;
-    overflow-y: auto;
     font-family: 'Nunito', sans-serif;
 }
 
-.TextBlock p {
-    margin: 10px 0;
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-}
-
-#PeachP {
-    font-weight: bold;
-    color: rgb(73, 100, 181);
+.postMY .MH1 {
     font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: rgb(73, 100, 181);
+    word-wrap: break-word;
 }
 
-#template {
-    width: 90%;
-    max-width: 1200px;
-    margin: 50px auto;
-    background: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-radius: 15px;
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    align-items: center;  /* Центрируем по вертикали, но блоки на одной строке */
+.postMY .MP1,
+.postMY .MP2,
+.postMY .MP3 {
+    margin: 8px 0;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 14px;
+    word-wrap: break-word;
 }
 
-/* Телефон */
+#Peaches::-webkit-scrollbar {
+    width: 8px;
+}
+
+#Peaches::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#Peaches::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+#Peaches::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#MyBlock::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.right-side h2 {
+    color: #2ecc71;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #000000;
+    padding: 5px 20px;
+    border-radius: 0 20px 20px 0;
+    letter-spacing: 2px;
+    transform: skew(-5deg);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    .postMY {
+        width: 180px;
+    }
+}
+
+@media (max-width: 900px) {
+    .postMY {
+        width: 160px;
+    }
+}
+
 @media (max-width: 768px) {
-    #template {
+    .main-container {
         flex-direction: column;
-        align-items: stretch;
     }
     
-    .ImgBlock {
-        width: 60%;
-        margin: 0 auto;
+    .post, .postMY {
+        width: calc(50% - 20px);
+        min-width: 150px;
+    }
+    
+    #MyBlock {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .post, .postMY {
+        width: calc(100% - 20px);
     }
 }
